@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Información | Fincux</title>
+  <meta name="description" content="Qué es Fincux, por qué nació y para quién está pensado: productores y compradores de Sahagún y sus veredas.">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Fincux, ir al inicio">
+        <picture>
+          <source srcset="img/logo.webp" type="image/webp">
+          <img src="img/logo.jpg" alt="" class="logo-img" width="36" height="36">
+        </picture>
+        <span class="logo-text">Fincux</span>
+      </a>
+
+      <!-- Menú -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="hamburger" aria-label="Abrir o cerrar menú">
+        <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </label>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="informacion.html" class="active" aria-current="page">Información</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button type="button" class="btn-login" disabled title="Próximamente">Iniciar sesión</button>
+          <a href="publicar.html" class="btn btn-accent btn-publish">Quiero vender</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Introducción -->
+    <section class="inf-hero container">
+      <div class="inf-hero-text">
+        <h1>Qué es Fincux</h1>
+        <p class="inf-lead">Fincux nació de una idea sencilla: que quien produce en el campo de Sahagún y quien necesita esos productos puedan encontrarse y hablar directamente.</p>
+        <p>Aquí los productores muestran lo que tienen, con su foto, su precio y su nombre, y los negocios de la zona pueden consultarles. El trato lo hacen entre ellos.</p>
+      </div>
+
+      <figure class="inf-photo">
+        <picture>
+          <source srcset="img/campo.webp" type="image/webp">
+          <img src="img/campo.jpg" alt="Paisaje del campo en Sahagún, Córdoba" width="1000" height="800" loading="lazy">
+        </picture>
+      </figure>
+    </section>
+
+    <!-- Por qué nació -->
+    <section class="inf-band" aria-labelledby="por-que">
+      <div class="container">
+        <h2 id="por-que">Por qué nació</h2>
+        <div class="inf-two">
+          <article>
+            <h3>Desde la finca</h3>
+            <p>Quien produce en las veredas de Sahagún suele venderle a quien pasa a recoger la cosecha. Ese comprador pone el precio, y el productor muchas veces no tiene a quién más ofrecerle.</p>
+          </article>
+          <article>
+            <h3>Desde el negocio</h3>
+            <p>Una tienda, una quesera o un restaurante necesita yuca, leche o carne cada semana, y no siempre sabe quién la produce a pocos kilómetros.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué hace -->
+    <section class="inf-block container" aria-labelledby="que-hace">
+      <h2 id="que-hace">Qué hace Fincux</h2>
+      <div class="inf-two">
+        <article class="inf-who">
+          <h3>Lo que hace</h3>
+          <p>Muestra lo que produce cada finca, con foto, precio y cantidad, y deja que el comprador le escriba al productor para preguntar.</p>
+        </article>
+        <article class="inf-who">
+          <h3>Lo que no hace</h3>
+          <p>No recibe pagos, no hace entregas y no pone precios. Eso lo acuerdan el productor y el comprador.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Para quién es -->
+    <section class="inf-block container" aria-labelledby="para-quien">
+      <h2 id="para-quien">Para quién es</h2>
+      <div class="inf-two">
+        <article class="inf-who">
+          <h3>Productores</h3>
+          <p>Para quien cultiva o cría en Sahagún y sus veredas y quiere que más gente conozca lo que produce.</p>
+        </article>
+        <article class="inf-who">
+          <h3>Compradores</h3>
+          <p>Para tiendas, restaurantes, queseras y panaderías que prefieren comprar cerca y saber a quién le compran.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Cierre -->
+    <section class="inf-block container">
+      <aside class="inf-end" aria-label="Invitación">
+        <p>¿Produces o compras en Sahagún? Cuéntanos qué necesitas.</p>
+        <div class="hero-buttons">
+          <a href="contacto.html" class="btn btn-primary">Escríbenos</a>
+          <a href="productos.html" class="btn btn-secondary">Ver productos</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <section class="footer-about" aria-label="Sobre Fincux">
+          <p class="logo">
+            <img src="img/logo.jpg" alt="" class="logo-img" width="32" height="32" loading="lazy">
+            <span class="logo-text">Fincux</span>
+          </p>
+          <p>Productores de Sahagún y compradores de la región, en contacto directo.</p>
+        </section>
+
+        <nav class="footer-col" aria-label="Navegación del pie de página">
+          <p class="title">Navegación</p>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="informacion.html">Información</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="publicar.html">Publicar producto</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <section class="footer-col" aria-label="Contacto">
+          <p class="title">Contacto</p>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sahagún, Córdoba, Colombia</li>
+            <li><a href="contacto.html"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Formulario de contacto</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Fincux</p>
+        <p>Proyecto en desarrollo · Sahagún, Córdoba</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
