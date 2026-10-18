@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | Fincux</title>
+  <meta name="description" content="Catálogo de productos del campo de Sahagún, Córdoba: leche, carne, yuca, ñame, arroz, plátano, maíz y queso.">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Fincux, ir al inicio">
+        <picture>
+          <source srcset="img/logo.webp" type="image/webp">
+          <img src="img/logo.jpg" alt="" class="logo-img" width="36" height="36">
+        </picture>
+        <span class="logo-text">Fincux</span>
+      </a>
+
+      <!-- Menú -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="hamburger" aria-label="Abrir o cerrar menú">
+        <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </label>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="informacion.html">Información</a></li>
+          <li><a href="productos.html" class="active" aria-current="page">Productos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button type="button" class="btn-login" disabled title="Próximamente">Iniciar sesión</button>
+          <a href="publicar.html" class="btn btn-accent btn-publish">Quiero vender</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header container">
+      <h1>Productos</h1>
+      <p>Productos del campo de Sahagún.</p>
+    </section>
+
+    <!-- Catálogo -->
+    <section class="container" aria-label="Catálogo de productos">
+      <p class="results-count">8 productos en el catálogo</p>
+
+      <div class="products-grid">
+        <article class="product-card">
+          <a href="producto-detalle.html?id=leche" class="product-img" tabindex="-1">
+            <picture>
+              <source srcset="img/leche.webp" type="image/webp">
+              <img src="img/leche.jpg" alt="Leche fresca de vaca en cantinas" width="800" height="500" loading="lazy">
+            </picture>
+          </a>
+          <div class="product-body">
+            <h3>Leche</h3>
+            <p class="product-price">$1.800 <span>/ litro</span></p>
+            <p class="product-meta">Productor: Don Héctor Pérez</p>
+            <a href="producto-detalle.html?id=leche" class="btn btn-primary btn-card">Ver producto</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a href="producto-detalle.html?id=carne" class="product-img" tabindex="-1">
+            <picture>
+              <source srcset="img/carne.webp" type="image/webp">
+              <img src="img/carne.jpg" alt="Cortes de carne de res" width="800" height="500" loading="lazy">
+            </picture>
+          </a>
+          <div class="product-body">
+            <h3>Carne</h3>
+            <p class="product-price">$22.000 <span>/ kg</span></p>
+            <p class="product-meta">Productor: Finca La Esperanza</p>
+            <a href="producto-detalle.html?id=carne" class="btn btn-primary btn-card">Ver producto</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a href="producto-detalle.html?id=yuca" class="product-img" tabindex="-1">
+            <picture>
+              <source srcset="img/yuca.webp" type="image/webp">
+              <img src="img/yuca.jpg" alt="Yuca recién cosechada" width="800" height="500" loading="lazy">
+            </picture>
+          </a>
+          <div class="product-body">
+            <h3>Yuca</h3>
+            <p class="product-price">$1.200 <span>/ kg</span></p>
+            <p class="product-meta">Productor: María González</p>
+            <a href="producto-detalle.html?id=yuca" class="btn btn-primary btn-card">Ver producto</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a href="producto-detalle.html?id=name" class="product-img" tabindex="-1">
+            <picture>
+              <source srcset="img/name.webp" type="image/webp">
+              <img src="img/name.jpg" alt="Ñame cosechado a mano" width="800" height="500" loading="lazy">
+            </picture>
+          </a>
+          <div class="product-body">
+            <h3>Ñame</h3>
+            <p class="product-price">$1.500 <span>/ kg</span></p>
+            <p class="product-meta">Productor: Agro Familia Torres</p>
+            <a href="producto-detalle.html?id=name" class="btn btn-primary btn-card">Ver producto</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a href="producto-detalle.html?id=arroz" class="product-img" tabindex="-1">
+            <picture>
+              <source srcset="img/arroz.webp" type="image/webp">
+              <img src="img/arroz.jpg" alt="Granos de arroz" width="800" height="500" loading="lazy">
+            </picture>
+          </a>
+          <div class="product-body">
+            <h3>Arroz</h3>
+            <p class="product-price">$1.800 <span>/ kg</span></p>
+            <p class="product-meta">Productor: Carlos Mendoza</p>
+            <a href="producto-detalle.html?id=arroz" class="btn btn-primary btn-card">Ver producto</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a href="producto-detalle.html?id=platano" class="product-img" tabindex="-1">
+            <picture>
+              <source srcset="img/platano.webp" type="image/webp">
+              <img src="img/platano.jpg" alt="Racimo de plátano verde" width="800" height="500" loading="lazy">
+            </picture>
+          </a>
+          <div class="product-body">
+            <h3>Plátano</h3>
+            <p class="product-price">$900 <span>/ kg</span></p>
+            <p class="product-meta">Productor: Rosa Bernal</p>
+            <a href="producto-detalle.html?id=platano" class="btn btn-primary btn-card">Ver producto</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a href="producto-detalle.html?id=maiz" class="product-img" tabindex="-1">
+            <picture>
+              <source srcset="img/maiz.webp" type="image/webp">
+              <img src="img/maiz.jpg" alt="Mazorcas de maíz amarillo" width="800" height="500" loading="lazy">
+            </picture>
+          </a>
+          <div class="product-body">
+            <h3>Maíz</h3>
+            <p class="product-price">$1.100 <span>/ kg</span></p>
+            <p class="product-meta">Productor: Pedro Alvarado</p>
+            <a href="producto-detalle.html?id=maiz" class="btn btn-primary btn-card">Ver producto</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a href="producto-detalle.html?id=queso" class="product-img" tabindex="-1">
+            <picture>
+              <source srcset="img/queso.webp" type="image/webp">
+              <img src="img/queso.jpg" alt="Bloque de queso costeño" width="800" height="500" loading="lazy">
+            </picture>
+          </a>
+          <div class="product-body">
+            <h3>Queso</h3>
+            <p class="product-price">$14.000 <span>/ kg</span></p>
+            <p class="product-meta">Productor: Lácteos Sahagún SAS</p>
+            <a href="producto-detalle.html?id=queso" class="btn btn-primary btn-card">Ver producto</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Banner -->
+    <section class="section container">
+      <aside class="cta-banner" aria-label="Invitación a productores">
+        <h2>¿Tienes un producto para ofrecer?</h2>
+        <p>Publícalo en Fincux y te damos toda la información necesaria.</p>
+        <div class="cta-buttons">
+          <a href="publicar.html" class="btn btn-accent">Publicar mi producto</a>
+          <a href="contacto.html" class="btn btn-secondary">Escríbenos</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <section class="footer-about" aria-label="Sobre Fincux">
+          <p class="logo">
+            <img src="img/logo.jpg" alt="" class="logo-img" width="32" height="32" loading="lazy">
+            <span class="logo-text">Fincux</span>
+          </p>
+          <p>Iniciativa para conectar a productores campesinos de Sahagún, Córdoba, con tiendas, restaurantes y negocios locales.</p>
+        </section>
+
+        <nav class="footer-col" aria-label="Navegación del pie de página">
+          <p class="title">Navegación</p>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="informacion.html">Información</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="publicar.html">Publicar producto</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <section class="footer-col" aria-label="Contacto">
+          <p class="title">Contacto</p>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sahagún, Córdoba, Colombia</li>
+            <li><a href="contacto.html"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Formulario de contacto</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Fincux</p>
+        <p>Proyecto en desarrollo · Sahagún, Córdoba</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
