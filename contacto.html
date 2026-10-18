@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Fincux</title>
+  <meta name="description" content="Contacta a Fincux para consultar por productos o dar a conocer tu producción.">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Fincux, ir al inicio">
+        <picture>
+          <source srcset="img/logo.webp" type="image/webp">
+          <img src="img/logo.jpg" alt="" class="logo-img" width="36" height="36">
+        </picture>
+        <span class="logo-text">Fincux</span>
+      </a>
+
+      <!-- Menú -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="hamburger" aria-label="Abrir o cerrar menú">
+        <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </label>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="informacion.html">Información</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="contacto.html" class="active" aria-current="page">Contacto</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button type="button" class="btn-login" disabled title="Próximamente">Iniciar sesión</button>
+          <a href="publicar.html" class="btn btn-accent btn-publish">Quiero vender</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header container">
+      <h1>Contacto</h1>
+      <p>Si tienes preguntas, quieres consultar por un producto o dar a conocer el tuyo, escríbenos.</p>
+    </section>
+
+    <div class="container contact-wrap">
+      <!-- Formulario -->
+      <section aria-label="Formulario de contacto">
+        <form class="contact-form" action="#" method="get">
+
+          <div class="form-field">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombres y apellidos" autocomplete="name"
+                   required minlength="3" maxlength="60">
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" autocomplete="email" required>
+            </div>
+
+            <div class="form-field">
+              <label for="telefono">Teléfono / WhatsApp</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="3001234567" autocomplete="tel"
+                     required pattern="3[0-9]{9}" title="Celular de 10 dígitos que empiece por 3, sin espacios">
+              <small class="form-hint">10 dígitos, sin espacios. Ej: 3001234567</small>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" name="asunto" placeholder="¿En qué te podemos ayudar?" required minlength="4" maxlength="80">
+          </div>
+
+          <div class="form-field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí tu mensaje" required minlength="10" maxlength="500"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">Enviar mensaje</button>
+        </form>
+      </section>
+
+      <!-- Datos de contacto -->
+      <aside class="contact-info" aria-label="Datos de contacto">
+        <section class="contact-info-item">
+          <h3>Ubicación</h3>
+          <p>Sahagún, Córdoba, Colombia</p>
+        </section>
+        <section class="contact-info-item">
+          <h3>Teléfono</h3>
+          <p>+57 300 123 4567</p>
+        </section>
+        <section class="contact-info-item">
+          <h3>Correo electrónico</h3>
+          <p>contacto@ejemplo.com</p>
+        </section>
+        <section class="contact-info-item">
+          <h3>Instagram</h3>
+          <p>@fincux.sahagun</p>
+        </section>
+        <section class="contact-info-item">
+          <h3>Facebook</h3>
+          <p>Fincux Sahagún</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <section class="footer-about" aria-label="Sobre Fincux">
+          <p class="logo">
+            <img src="img/logo.jpg" alt="" class="logo-img" width="32" height="32" loading="lazy">
+            <span class="logo-text">Fincux</span>
+          </p>
+          <p>Iniciativa para conectar a productores campesinos de Sahagún, Córdoba, con tiendas, restaurantes y negocios locales.</p>
+        </section>
+
+        <nav class="footer-col" aria-label="Navegación del pie de página">
+          <p class="title">Navegación</p>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="informacion.html">Información</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="publicar.html">Publicar producto</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <section class="footer-col" aria-label="Contacto">
+          <p class="title">Contacto</p>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sahagún, Córdoba, Colombia</li>
+            <li><a href="contacto.html"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Formulario de contacto</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Fincux</p>
+        <p>Proyecto en desarrollo · Sahagún, Córdoba</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
