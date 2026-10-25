@@ -20,37 +20,37 @@
 <body>
 
   <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
+  <header class="encabezado">
+    <div class="centro encabezado-fila">
       <a href="index.html" class="logo" aria-label="Fincux, ir al inicio">
         <picture>
           <source srcset="img/logo.webp" type="image/webp">
-          <img src="img/logo.jpg" alt="" class="logo-img" width="36" height="36">
+          <img src="img/logo.jpg" alt="" class="logo-imagen" width="36" height="36">
         </picture>
-        <span class="logo-text">Fincux</span>
+        <span class="logo-nombre">Fincux</span>
       </a>
 
       <!-- Menú -->
-      <input type="checkbox" id="menu-toggle" class="menu-toggle">
-      <label for="menu-toggle" class="hamburger" aria-label="Abrir o cerrar menú">
-        <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+      <input type="checkbox" id="menu-toggle" class="menu-check">
+      <label for="menu-toggle" class="boton-menu" aria-label="Abrir o cerrar menú">
+        <svg class="icono-abrir" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <svg class="icono-cerrar" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </label>
 
-      <nav class="main-nav" aria-label="Navegación principal">
-        <ul class="nav-links">
-          <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>
+      <nav class="menu-principal" aria-label="Navegación principal">
+        <ul class="menu-enlaces">
+          <li><a href="index.html" class="enlace-activo" aria-current="page">Inicio</a></li>
           <li><a href="informacion.html">Información</a></li>
           <li><a href="productos.html">Productos</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
-        <div class="nav-actions">
-          <button type="button" class="btn-login" disabled title="Próximamente">Iniciar sesión</button>
-          <a href="publicar.html" class="btn btn-accent btn-publish">Quiero vender</a>
+        <div class="menu-botones">
+          <button type="button" class="boton-sesion" disabled title="Próximamente">Iniciar sesión</button>
+          <a href="publicar.html" class="boton boton-destacado boton-vender">Quiero vender</a>
         </div>
       </nav>
     </div>
@@ -58,47 +58,47 @@
 
   <main>
     <!-- Hero -->
-    <section class="hero">
-      <picture class="hero-bg">
+    <section class="portada">
+      <picture class="portada-foto">
         <source srcset="img/campo.webp" type="image/webp">
         <img src="img/campo.jpg" alt="Campo sembrado en una vereda de Sahagún, Córdoba" width="1000" height="800">
       </picture>
-      <div class="container hero-content">
-          <h1 class="hero-title">
-            Compra directo al <span class="highlight">campesino</span>, sin intermediarios
+      <div class="centro portada-texto">
+          <h1 class="portada-titulo">
+            Compra directo al <span class="resaltado">campesino</span>, sin intermediarios
           </h1>
-          <p class="hero-text">
+          <p class="portada-parrafo">
             Conectamos a productores de Sahagún con restaurantes, tiendas y negocios locales para que acuerden directamente precio, cantidad y entrega.
           </p>
-          <div class="hero-buttons">
-            <a href="productos.html" class="btn btn-primary">Ver productos</a>
-            <a href="publicar.html" class="btn btn-light">Quiero vender</a>
+          <div class="grupo-botones">
+            <a href="productos.html" class="boton boton-verde">Ver productos</a>
+            <a href="publicar.html" class="boton boton-blanco">Quiero vender</a>
           </div>
       </div>
     </section>
 
     <!-- Cómo funciona -->
-    <section class="section container" aria-labelledby="como-funciona">
-      <header class="section-head">
+    <section class="seccion centro" aria-labelledby="como-funciona">
+      <header class="titulo-seccion">
         <h2 id="como-funciona">¿Cómo funciona?</h2>
         <p>Tres pasos para comprar directo en el campo.</p>
       </header>
 
-      <div class="steps-row">
-        <article class="step">
-          <i class="fa-solid fa-seedling step-icon" aria-hidden="true"></i>
+      <div class="fila-pasos">
+        <article class="paso">
+          <i class="fa-solid fa-seedling paso-icono" aria-hidden="true"></i>
           <h3>El productor da a conocer su producto</h3>
           <p>El producto se muestra con foto, precio, vereda y disponibilidad.</p>
         </article>
 
-        <article class="step">
-          <i class="fa-solid fa-magnifying-glass step-icon" aria-hidden="true"></i>
+        <article class="paso">
+          <i class="fa-solid fa-magnifying-glass paso-icono" aria-hidden="true"></i>
           <h3>El comprador consulta</h3>
           <p>Restaurantes y tiendas revisan el catálogo y se ponen en contacto.</p>
         </article>
 
-        <article class="step">
-          <i class="fa-solid fa-handshake step-icon" aria-hidden="true"></i>
+        <article class="paso">
+          <i class="fa-solid fa-handshake paso-icono" aria-hidden="true"></i>
           <h3>Acuerdan directamente</h3>
           <p>Productor y comprador definen precio, cantidad y forma de entrega entre ellos.</p>
         </article>
@@ -106,141 +106,141 @@
     </section>
 
     <!-- Destacados -->
-    <section class="section section-alt" aria-labelledby="destacados">
-      <div class="container">
-        <header class="section-head">
+    <section class="seccion seccion-verde" aria-labelledby="destacados">
+      <div class="centro">
+        <header class="titulo-seccion">
           <h2 id="destacados">Productos destacados</h2>
           <p>Lo que se está produciendo esta semana en las veredas.</p>
         </header>
 
-        <div class="products-grid">
-          <article class="product-card">
-            <a href="producto-detalle.html?id=leche" class="product-img" tabindex="-1">
+        <div class="grilla-productos">
+          <article class="tarjeta-producto">
+            <a href="producto-detalle.html?id=leche" class="tarjeta-foto" tabindex="-1">
               <picture>
                 <source srcset="img/leche.webp" type="image/webp">
                 <img src="img/leche.jpg" alt="Leche fresca de vaca en cantinas" width="800" height="500" loading="lazy">
               </picture>
             </a>
-            <div class="product-body">
-              <span class="tag">Lácteos</span>
+            <div class="tarjeta-info">
+              <span class="etiqueta-categoria">Lácteos</span>
               <h3>Leche</h3>
-              <p class="product-price">$1.800 <span>/ litro</span></p>
-              <p class="product-meta">Productor: Don Héctor Pérez</p>
-              <a href="producto-detalle.html?id=leche" class="btn btn-secondary btn-card">Ver producto</a>
+              <p class="precio">$1.800 <span>/ litro</span></p>
+              <p class="productor">Productor: Don Héctor Pérez</p>
+              <a href="producto-detalle.html?id=leche" class="boton boton-borde boton-tarjeta">Ver producto</a>
             </div>
           </article>
 
-          <article class="product-card">
-            <a href="producto-detalle.html?id=carne" class="product-img" tabindex="-1">
+          <article class="tarjeta-producto">
+            <a href="producto-detalle.html?id=carne" class="tarjeta-foto" tabindex="-1">
               <picture>
                 <source srcset="img/carne.webp" type="image/webp">
                 <img src="img/carne.jpg" alt="Cortes de carne de res" width="800" height="500" loading="lazy">
               </picture>
             </a>
-            <div class="product-body">
-              <span class="tag">Ganadería</span>
+            <div class="tarjeta-info">
+              <span class="etiqueta-categoria">Ganadería</span>
               <h3>Carne</h3>
-              <p class="product-price">$22.000 <span>/ kg</span></p>
-              <p class="product-meta">Productor: Finca La Esperanza</p>
-              <a href="producto-detalle.html?id=carne" class="btn btn-secondary btn-card">Ver producto</a>
+              <p class="precio">$22.000 <span>/ kg</span></p>
+              <p class="productor">Productor: Finca La Esperanza</p>
+              <a href="producto-detalle.html?id=carne" class="boton boton-borde boton-tarjeta">Ver producto</a>
             </div>
           </article>
 
-          <article class="product-card">
-            <a href="producto-detalle.html?id=yuca" class="product-img" tabindex="-1">
+          <article class="tarjeta-producto">
+            <a href="producto-detalle.html?id=yuca" class="tarjeta-foto" tabindex="-1">
               <picture>
                 <source srcset="img/yuca.webp" type="image/webp">
                 <img src="img/yuca.jpg" alt="Yuca recién cosechada" width="800" height="500" loading="lazy">
               </picture>
             </a>
-            <div class="product-body">
-              <span class="tag">Tubérculos</span>
+            <div class="tarjeta-info">
+              <span class="etiqueta-categoria">Tubérculos</span>
               <h3>Yuca</h3>
-              <p class="product-price">$1.200 <span>/ kg</span></p>
-              <p class="product-meta">Productor: María González</p>
-              <a href="producto-detalle.html?id=yuca" class="btn btn-secondary btn-card">Ver producto</a>
+              <p class="precio">$1.200 <span>/ kg</span></p>
+              <p class="productor">Productor: María González</p>
+              <a href="producto-detalle.html?id=yuca" class="boton boton-borde boton-tarjeta">Ver producto</a>
             </div>
           </article>
 
-          <article class="product-card">
-            <a href="producto-detalle.html?id=name" class="product-img" tabindex="-1">
+          <article class="tarjeta-producto">
+            <a href="producto-detalle.html?id=name" class="tarjeta-foto" tabindex="-1">
               <picture>
                 <source srcset="img/name.webp" type="image/webp">
                 <img src="img/name.jpg" alt="Ñame cosechado a mano" width="800" height="500" loading="lazy">
               </picture>
             </a>
-            <div class="product-body">
-              <span class="tag">Tubérculos</span>
+            <div class="tarjeta-info">
+              <span class="etiqueta-categoria">Tubérculos</span>
               <h3>Ñame</h3>
-              <p class="product-price">$1.500 <span>/ kg</span></p>
-              <p class="product-meta">Productor: Agro Familia Torres</p>
-              <a href="producto-detalle.html?id=name" class="btn btn-secondary btn-card">Ver producto</a>
+              <p class="precio">$1.500 <span>/ kg</span></p>
+              <p class="productor">Productor: Agro Familia Torres</p>
+              <a href="producto-detalle.html?id=name" class="boton boton-borde boton-tarjeta">Ver producto</a>
             </div>
           </article>
 
-          <article class="product-card">
-            <a href="producto-detalle.html?id=arroz" class="product-img" tabindex="-1">
+          <article class="tarjeta-producto">
+            <a href="producto-detalle.html?id=arroz" class="tarjeta-foto" tabindex="-1">
               <picture>
                 <source srcset="img/arroz.webp" type="image/webp">
                 <img src="img/arroz.jpg" alt="Granos de arroz" width="800" height="500" loading="lazy">
               </picture>
             </a>
-            <div class="product-body">
-              <span class="tag">Granos</span>
+            <div class="tarjeta-info">
+              <span class="etiqueta-categoria">Granos</span>
               <h3>Arroz</h3>
-              <p class="product-price">$1.800 <span>/ kg</span></p>
-              <p class="product-meta">Productor: Carlos Mendoza</p>
-              <a href="producto-detalle.html?id=arroz" class="btn btn-secondary btn-card">Ver producto</a>
+              <p class="precio">$1.800 <span>/ kg</span></p>
+              <p class="productor">Productor: Carlos Mendoza</p>
+              <a href="producto-detalle.html?id=arroz" class="boton boton-borde boton-tarjeta">Ver producto</a>
             </div>
           </article>
 
-          <article class="product-card">
-            <a href="producto-detalle.html?id=platano" class="product-img" tabindex="-1">
+          <article class="tarjeta-producto">
+            <a href="producto-detalle.html?id=platano" class="tarjeta-foto" tabindex="-1">
               <picture>
                 <source srcset="img/platano.webp" type="image/webp">
                 <img src="img/platano.jpg" alt="Racimo de plátano verde" width="800" height="500" loading="lazy">
               </picture>
             </a>
-            <div class="product-body">
-              <span class="tag">Frutas</span>
+            <div class="tarjeta-info">
+              <span class="etiqueta-categoria">Frutas</span>
               <h3>Plátano</h3>
-              <p class="product-price">$900 <span>/ kg</span></p>
-              <p class="product-meta">Productor: Rosa Bernal</p>
-              <a href="producto-detalle.html?id=platano" class="btn btn-secondary btn-card">Ver producto</a>
+              <p class="precio">$900 <span>/ kg</span></p>
+              <p class="productor">Productor: Rosa Bernal</p>
+              <a href="producto-detalle.html?id=platano" class="boton boton-borde boton-tarjeta">Ver producto</a>
             </div>
           </article>
         </div>
-        <p class="section-more"><a href="productos.html" class="btn btn-primary">Ver todos los productos</a></p>
+        <p class="ver-mas"><a href="productos.html" class="boton boton-verde">Ver todos los productos</a></p>
       </div>
     </section>
 
     <!-- Banner -->
-    <section class="section container">
-      <aside class="cta-banner" aria-label="Invitación a productores">
+    <section class="seccion centro">
+      <aside class="banner" aria-label="Invitación a productores">
         <h2>¿Eres productor en Sahagún?</h2>
         <p>Si quieres dar a conocer tu producción a compradores de la región, publica tu producto y te contamos cómo participar.</p>
-        <div class="cta-buttons">
-          <a href="publicar.html" class="btn btn-accent">Publicar mi producto</a>
-          <a href="informacion.html" class="btn btn-secondary">Conocer Fincux</a>
+        <div class="banner-botones">
+          <a href="publicar.html" class="boton boton-destacado">Publicar mi producto</a>
+          <a href="informacion.html" class="boton boton-borde">Conocer Fincux</a>
         </div>
       </aside>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-grid">
-        <section class="footer-about" aria-label="Sobre Fincux">
+  <footer class="pie">
+    <div class="centro pie-interno">
+      <div class="pie-columnas">
+        <section class="pie-logo" aria-label="Sobre Fincux">
           <p class="logo">
-            <img src="img/logo.jpg" alt="" class="logo-img" width="32" height="32" loading="lazy">
-            <span class="logo-text">Fincux</span>
+            <img src="img/logo.jpg" alt="" class="logo-imagen" width="32" height="32" loading="lazy">
+            <span class="logo-nombre">Fincux</span>
           </p>
           <p>Iniciativa para conectar a productores campesinos de Sahagún, Córdoba, con tiendas, restaurantes y negocios locales.</p>
         </section>
 
-        <nav class="footer-col" aria-label="Navegación del pie de página">
-          <p class="title">Navegación</p>
+        <nav class="pie-columna" aria-label="Navegación del pie de página">
+          <p class="pie-titulo">Navegación</p>
           <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="informacion.html">Información</a></li>
@@ -250,16 +250,16 @@
           </ul>
         </nav>
 
-        <section class="footer-col" aria-label="Contacto">
-          <p class="title">Contacto</p>
-          <ul class="footer-contact">
+        <section class="pie-columna" aria-label="Contacto">
+          <p class="pie-titulo">Contacto</p>
+          <ul class="pie-contacto">
             <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sahagún, Córdoba, Colombia</li>
             <li><a href="contacto.html"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Formulario de contacto</a></li>
           </ul>
         </section>
       </div>
 
-      <div class="footer-bottom">
+      <div class="pie-final">
         <p>© 2026 Fincux</p>
         <p>Proyecto en desarrollo · Sahagún, Córdoba</p>
       </div>

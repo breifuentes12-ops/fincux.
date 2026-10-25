@@ -20,37 +20,37 @@
 <body>
 
   <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
+  <header class="encabezado">
+    <div class="centro encabezado-fila">
       <a href="index.html" class="logo" aria-label="Fincux, ir al inicio">
         <picture>
           <source srcset="img/logo.webp" type="image/webp">
-          <img src="img/logo.jpg" alt="" class="logo-img" width="36" height="36">
+          <img src="img/logo.jpg" alt="" class="logo-imagen" width="36" height="36">
         </picture>
-        <span class="logo-text">Fincux</span>
+        <span class="logo-nombre">Fincux</span>
       </a>
 
       <!-- Menú -->
-      <input type="checkbox" id="menu-toggle" class="menu-toggle">
-      <label for="menu-toggle" class="hamburger" aria-label="Abrir o cerrar menú">
-        <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+      <input type="checkbox" id="menu-toggle" class="menu-check">
+      <label for="menu-toggle" class="boton-menu" aria-label="Abrir o cerrar menú">
+        <svg class="icono-abrir" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <svg class="icono-cerrar" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </label>
 
-      <nav class="main-nav" aria-label="Navegación principal">
-        <ul class="nav-links">
+      <nav class="menu-principal" aria-label="Navegación principal">
+        <ul class="menu-enlaces">
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="informacion.html" class="active" aria-current="page">Información</a></li>
+          <li><a href="informacion.html" class="enlace-activo" aria-current="page">Información</a></li>
           <li><a href="productos.html">Productos</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
-        <div class="nav-actions">
-          <button type="button" class="btn-login" disabled title="Próximamente">Iniciar sesión</button>
-          <a href="publicar.html" class="btn btn-accent btn-publish">Quiero vender</a>
+        <div class="menu-botones">
+          <button type="button" class="boton-sesion" disabled title="Próximamente">Iniciar sesión</button>
+          <a href="publicar.html" class="boton boton-destacado boton-vender">Quiero vender</a>
         </div>
       </nav>
     </div>
@@ -58,14 +58,14 @@
 
   <main>
     <!-- Introducción -->
-    <section class="inf-hero container">
-      <div class="inf-hero-text">
+    <section class="info-portada centro">
+      <div class="info-texto">
         <h1>Qué es Fincux</h1>
-        <p class="inf-lead">Fincux nació de una idea sencilla: que quien produce en el campo de Sahagún y quien necesita esos productos puedan encontrarse y hablar directamente.</p>
+        <p class="info-intro">Fincux nació de una idea sencilla: que quien produce en el campo de Sahagún y quien necesita esos productos puedan encontrarse y hablar directamente.</p>
         <p>Aquí los productores muestran lo que tienen, con su foto, su precio y su nombre, y los negocios de la zona pueden consultarles. El trato lo hacen entre ellos.</p>
       </div>
 
-      <figure class="inf-photo">
+      <figure class="info-foto">
         <picture>
           <source srcset="img/campo.webp" type="image/webp">
           <img src="img/campo.jpg" alt="Paisaje del campo en Sahagún, Córdoba" width="1000" height="800" loading="lazy">
@@ -74,10 +74,10 @@
     </section>
 
     <!-- Por qué nació -->
-    <section class="inf-band" aria-labelledby="por-que">
-      <div class="container">
+    <section class="info-franja" aria-labelledby="por-que">
+      <div class="centro">
         <h2 id="por-que">Por qué nació</h2>
-        <div class="inf-two">
+        <div class="dos-columnas">
           <article>
             <h3>Desde la finca</h3>
             <p>Quien produce en las veredas de Sahagún suele venderle a quien pasa a recoger la cosecha. Ese comprador pone el precio, y el productor muchas veces no tiene a quién más ofrecerle.</p>
@@ -91,14 +91,14 @@
     </section>
 
     <!-- Qué hace -->
-    <section class="inf-block container" aria-labelledby="que-hace">
+    <section class="info-bloque centro" aria-labelledby="que-hace">
       <h2 id="que-hace">Qué hace Fincux</h2>
-      <div class="inf-two">
-        <article class="inf-who">
+      <div class="dos-columnas">
+        <article class="">
           <h3>Lo que hace</h3>
           <p>Muestra lo que produce cada finca, con foto, precio y cantidad, y deja que el comprador le escriba al productor para preguntar.</p>
         </article>
-        <article class="inf-who">
+        <article class="">
           <h3>Lo que no hace</h3>
           <p>No recibe pagos, no hace entregas y no pone precios. Eso lo acuerdan el productor y el comprador.</p>
         </article>
@@ -106,14 +106,14 @@
     </section>
 
     <!-- Para quién es -->
-    <section class="inf-block container" aria-labelledby="para-quien">
+    <section class="info-bloque centro" aria-labelledby="para-quien">
       <h2 id="para-quien">Para quién es</h2>
-      <div class="inf-two">
-        <article class="inf-who">
+      <div class="dos-columnas">
+        <article class="">
           <h3>Productores</h3>
           <p>Para quien cultiva o cría en Sahagún y sus veredas y quiere que más gente conozca lo que produce.</p>
         </article>
-        <article class="inf-who">
+        <article class="">
           <h3>Compradores</h3>
           <p>Para tiendas, restaurantes, queseras y panaderías que prefieren comprar cerca y saber a quién le compran.</p>
         </article>
@@ -121,31 +121,31 @@
     </section>
 
     <!-- Cierre -->
-    <section class="inf-block container">
-      <aside class="inf-end" aria-label="Invitación">
+    <section class="info-bloque centro">
+      <aside class="info-cierre" aria-label="Invitación">
         <p>¿Produces o compras en Sahagún? Cuéntanos qué necesitas.</p>
-        <div class="hero-buttons">
-          <a href="contacto.html" class="btn btn-primary">Escríbenos</a>
-          <a href="productos.html" class="btn btn-secondary">Ver productos</a>
+        <div class="grupo-botones">
+          <a href="contacto.html" class="boton boton-verde">Escríbenos</a>
+          <a href="productos.html" class="boton boton-borde">Ver productos</a>
         </div>
       </aside>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-grid">
-        <section class="footer-about" aria-label="Sobre Fincux">
+  <footer class="pie">
+    <div class="centro pie-interno">
+      <div class="pie-columnas">
+        <section class="pie-logo" aria-label="Sobre Fincux">
           <p class="logo">
-            <img src="img/logo.jpg" alt="" class="logo-img" width="32" height="32" loading="lazy">
-            <span class="logo-text">Fincux</span>
+            <img src="img/logo.jpg" alt="" class="logo-imagen" width="32" height="32" loading="lazy">
+            <span class="logo-nombre">Fincux</span>
           </p>
           <p>Productores de Sahagún y compradores de la región, en contacto directo.</p>
         </section>
 
-        <nav class="footer-col" aria-label="Navegación del pie de página">
-          <p class="title">Navegación</p>
+        <nav class="pie-columna" aria-label="Navegación del pie de página">
+          <p class="pie-titulo">Navegación</p>
           <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="informacion.html">Información</a></li>
@@ -155,16 +155,16 @@
           </ul>
         </nav>
 
-        <section class="footer-col" aria-label="Contacto">
-          <p class="title">Contacto</p>
-          <ul class="footer-contact">
+        <section class="pie-columna" aria-label="Contacto">
+          <p class="pie-titulo">Contacto</p>
+          <ul class="pie-contacto">
             <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sahagún, Córdoba, Colombia</li>
             <li><a href="contacto.html"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Formulario de contacto</a></li>
           </ul>
         </section>
       </div>
 
-      <div class="footer-bottom">
+      <div class="pie-final">
         <p>© 2026 Fincux</p>
         <p>Proyecto en desarrollo · Sahagún, Córdoba</p>
       </div>

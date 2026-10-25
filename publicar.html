@@ -20,64 +20,64 @@
 <body>
 
   <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
+  <header class="encabezado">
+    <div class="centro encabezado-fila">
       <a href="index.html" class="logo" aria-label="Fincux, ir al inicio">
         <picture>
           <source srcset="img/logo.webp" type="image/webp">
-          <img src="img/logo.jpg" alt="" class="logo-img" width="36" height="36">
+          <img src="img/logo.jpg" alt="" class="logo-imagen" width="36" height="36">
         </picture>
-        <span class="logo-text">Fincux</span>
+        <span class="logo-nombre">Fincux</span>
       </a>
 
       <!-- Menú -->
-      <input type="checkbox" id="menu-toggle" class="menu-toggle">
-      <label for="menu-toggle" class="hamburger" aria-label="Abrir o cerrar menú">
-        <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+      <input type="checkbox" id="menu-toggle" class="menu-check">
+      <label for="menu-toggle" class="boton-menu" aria-label="Abrir o cerrar menú">
+        <svg class="icono-abrir" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <svg class="icono-cerrar" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </label>
 
-      <nav class="main-nav" aria-label="Navegación principal">
-        <ul class="nav-links">
+      <nav class="menu-principal" aria-label="Navegación principal">
+        <ul class="menu-enlaces">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="informacion.html">Información</a></li>
           <li><a href="productos.html">Productos</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
-        <div class="nav-actions">
-          <button type="button" class="btn-login" disabled title="Próximamente">Iniciar sesión</button>
-          <a href="publicar.html" class="btn btn-accent btn-publish" aria-current="page">Quiero vender</a>
+        <div class="menu-botones">
+          <button type="button" class="boton-sesion" disabled title="Próximamente">Iniciar sesión</button>
+          <a href="publicar.html" class="boton boton-destacado boton-vender" aria-current="page">Quiero vender</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="page-header container">
+    <section class="cabecera-pagina centro">
       <h1>Publicar producto</h1>
       <p>Cuéntanos qué produces. Revisamos los datos y te contactamos para mostrar tu producto en el catálogo.</p>
     </section>
 
-    <div class="container contact-wrap">
+    <div class="centro formulario-zona">
       <!-- Formulario -->
       <section aria-label="Formulario de publicación">
-        <form class="contact-form" action="#" method="get">
+        <form class="formulario" action="#" method="get">
 
-          <fieldset class="form-group">
+          <fieldset class="grupo-campos">
             <legend>Datos del productor</legend>
 
-            <div class="form-field">
+            <div class="campo">
               <label for="productor">Nombre del productor o finca</label>
               <input type="text" id="productor" name="productor" placeholder="Ej: Finca La Esperanza"
                      required minlength="3" maxlength="60">
             </div>
 
-            <div class="form-row">
-              <div class="form-field">
+            <div class="fila-campos">
+              <div class="campo">
                 <label for="vereda">Vereda</label>
                 <select id="vereda" name="vereda" required>
                   <option value="">Elige tu vereda</option>
@@ -92,30 +92,30 @@
                 </select>
               </div>
 
-              <div class="form-field">
+              <div class="campo">
                 <label for="telefono">Teléfono / WhatsApp</label>
                 <input type="tel" id="telefono" name="telefono" placeholder="3001234567" autocomplete="tel"
                        required pattern="3[0-9]{9}" title="Celular de 10 dígitos que empiece por 3, sin espacios">
-                <small class="form-hint">10 dígitos, sin espacios.</small>
+                <small class="ayuda">10 dígitos, sin espacios.</small>
               </div>
             </div>
 
-            <div class="form-field">
-              <label for="correo">Correo electrónico <span class="optional">(opcional)</span></label>
+            <div class="campo">
+              <label for="correo">Correo electrónico <span class="opcional">(opcional)</span></label>
               <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" autocomplete="email">
             </div>
           </fieldset>
 
-          <fieldset class="form-group">
+          <fieldset class="grupo-campos">
             <legend>Datos del producto</legend>
 
-            <div class="form-row">
-              <div class="form-field">
+            <div class="fila-campos">
+              <div class="campo">
                 <label for="producto">Producto</label>
                 <input type="text" id="producto" name="producto" placeholder="Ej: Yuca" required minlength="3" maxlength="40">
               </div>
 
-              <div class="form-field">
+              <div class="campo">
                 <label for="categoria">Categoría</label>
                 <select id="categoria" name="categoria" required>
                   <option value="">Elige una categoría</option>
@@ -128,13 +128,13 @@
               </div>
             </div>
 
-            <div class="form-row">
-              <div class="form-field">
+            <div class="fila-campos">
+              <div class="campo">
                 <label for="precio">Precio por unidad (COP)</label>
                 <input type="number" id="precio" name="precio" placeholder="1800" required min="100" max="1000000" step="50">
               </div>
 
-              <div class="form-field">
+              <div class="campo">
                 <label for="unidad">Unidad de venta</label>
                 <select id="unidad" name="unidad" required>
                   <option value="">Elige la unidad</option>
@@ -146,51 +146,51 @@
               </div>
             </div>
 
-            <div class="form-row">
-              <div class="form-field">
+            <div class="fila-campos">
+              <div class="campo">
                 <label for="cantidad">Cantidad disponible</label>
                 <input type="number" id="cantidad" name="cantidad" placeholder="500" required min="1" max="10000">
-                <small class="form-hint">Entre 1 y 10.000 unidades.</small>
+                <small class="ayuda">Entre 1 y 10.000 unidades.</small>
               </div>
 
-              <div class="form-field">
+              <div class="campo">
                 <label for="fecha">Disponible desde</label>
                 <input type="date" id="fecha" name="fecha" required min="2026-10-01" max="2027-12-31">
               </div>
             </div>
 
-            <div class="form-field">
-              <label for="foto">Foto del producto <span class="optional">(opcional)</span></label>
+            <div class="campo">
+              <label for="foto">Foto del producto <span class="opcional">(opcional)</span></label>
               <input type="file" id="foto" name="foto" accept="image/*">
             </div>
 
-            <div class="form-field">
+            <div class="campo">
               <label for="descripcion">Descripción</label>
               <textarea id="descripcion" name="descripcion" rows="4" placeholder="Cómo lo produces, cómo lo entregas, presentación…" maxlength="300"></textarea>
             </div>
           </fieldset>
 
-          <div class="form-check">
+          <div class="casilla">
             <input type="checkbox" id="acepto" name="acepto" required>
             <label for="acepto">Confirmo que los datos son reales y que soy el productor o tengo su permiso.</label>
           </div>
 
-          <button type="submit" class="btn btn-accent form-submit">Enviar producto</button>
+          <button type="submit" class="boton boton-destacado boton-enviar">Enviar producto</button>
         </form>
       </section>
 
       <!-- Consejos -->
-      <aside class="contact-info" aria-labelledby="antes">
-        <h2 class="aside-title" id="antes">Antes de publicar</h2>
-        <section class="contact-info-item">
+      <aside class="lateral" aria-labelledby="antes">
+        <h2 class="lateral-titulo" id="antes">Antes de publicar</h2>
+        <section class="lateral-bloque">
           <h3>Una buena foto</h3>
           <p>Con luz de día y el producto limpio. Así el comprador sabe lo que va a recibir.</p>
         </section>
-        <section class="contact-info-item">
+        <section class="lateral-bloque">
           <h3>Un precio claro</h3>
           <p>Pon el precio por kilo, litro o bulto. El trato final lo haces tú con el comprador.</p>
         </section>
-        <section class="contact-info-item">
+        <section class="lateral-bloque">
           <h3>Un número que contestes</h3>
           <p>Los compradores te van a escribir por WhatsApp.</p>
         </section>
@@ -199,19 +199,19 @@
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-grid">
-        <section class="footer-about" aria-label="Sobre Fincux">
+  <footer class="pie">
+    <div class="centro pie-interno">
+      <div class="pie-columnas">
+        <section class="pie-logo" aria-label="Sobre Fincux">
           <p class="logo">
-            <img src="img/logo.jpg" alt="" class="logo-img" width="32" height="32" loading="lazy">
-            <span class="logo-text">Fincux</span>
+            <img src="img/logo.jpg" alt="" class="logo-imagen" width="32" height="32" loading="lazy">
+            <span class="logo-nombre">Fincux</span>
           </p>
           <p>Iniciativa para conectar a productores campesinos de Sahagún, Córdoba, con tiendas, restaurantes y negocios locales.</p>
         </section>
 
-        <nav class="footer-col" aria-label="Navegación del pie de página">
-          <p class="title">Navegación</p>
+        <nav class="pie-columna" aria-label="Navegación del pie de página">
+          <p class="pie-titulo">Navegación</p>
           <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="informacion.html">Información</a></li>
@@ -221,16 +221,16 @@
           </ul>
         </nav>
 
-        <section class="footer-col" aria-label="Contacto">
-          <p class="title">Contacto</p>
-          <ul class="footer-contact">
+        <section class="pie-columna" aria-label="Contacto">
+          <p class="pie-titulo">Contacto</p>
+          <ul class="pie-contacto">
             <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sahagún, Córdoba, Colombia</li>
             <li><a href="contacto.html"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Formulario de contacto</a></li>
           </ul>
         </section>
       </div>
 
-      <div class="footer-bottom">
+      <div class="pie-final">
         <p>© 2026 Fincux</p>
         <p>Proyecto en desarrollo · Sahagún, Córdoba</p>
       </div>
