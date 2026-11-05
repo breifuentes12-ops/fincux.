@@ -65,7 +65,7 @@
     <div class="centro formulario-zona">
       <!-- Formulario -->
       <section aria-label="Formulario de publicación">
-        <form class="formulario" action="#" method="get">
+        <form class="formulario" id="form-publicar" novalidate>
 
           <fieldset class="grupo-campos">
             <legend>Datos del productor</legend>
@@ -74,6 +74,7 @@
               <label for="productor">Nombre del productor o finca</label>
               <input type="text" id="productor" name="productor" placeholder="Ej: Finca La Esperanza"
                      required minlength="3" maxlength="60">
+              <small class="error-texto" id="error-productor"></small>
             </div>
 
             <div class="fila-campos">
@@ -90,12 +91,14 @@
                   <option>Santa Rosa</option>
                   <option>Otra</option>
                 </select>
+                <small class="error-texto" id="error-vereda"></small>
               </div>
 
               <div class="campo">
                 <label for="telefono">Teléfono / WhatsApp</label>
                 <input type="tel" id="telefono" name="telefono" placeholder="3001234567" autocomplete="tel"
                        required pattern="3[0-9]{9}" title="Celular de 10 dígitos que empiece por 3, sin espacios">
+                <small class="error-texto" id="error-telefono"></small>
                 <small class="ayuda">10 dígitos, sin espacios.</small>
               </div>
             </div>
@@ -103,6 +106,7 @@
             <div class="campo">
               <label for="correo">Correo electrónico <span class="opcional">(opcional)</span></label>
               <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" autocomplete="email">
+              <small class="error-texto" id="error-correo"></small>
             </div>
           </fieldset>
 
@@ -113,6 +117,7 @@
               <div class="campo">
                 <label for="producto">Producto</label>
                 <input type="text" id="producto" name="producto" placeholder="Ej: Yuca" required minlength="3" maxlength="40">
+                <small class="error-texto" id="error-producto"></small>
               </div>
 
               <div class="campo">
@@ -125,6 +130,7 @@
                   <option>Granos</option>
                   <option>Frutas</option>
                 </select>
+                <small class="error-texto" id="error-categoria"></small>
               </div>
             </div>
 
@@ -132,6 +138,7 @@
               <div class="campo">
                 <label for="precio">Precio por unidad (COP)</label>
                 <input type="number" id="precio" name="precio" placeholder="1800" required min="100" max="1000000" step="50">
+                <small class="error-texto" id="error-precio"></small>
               </div>
 
               <div class="campo">
@@ -143,6 +150,7 @@
                   <option>bulto</option>
                   <option>unidad</option>
                 </select>
+                <small class="error-texto" id="error-unidad"></small>
               </div>
             </div>
 
@@ -150,12 +158,14 @@
               <div class="campo">
                 <label for="cantidad">Cantidad disponible</label>
                 <input type="number" id="cantidad" name="cantidad" placeholder="500" required min="1" max="10000">
+                <small class="error-texto" id="error-cantidad"></small>
                 <small class="ayuda">Entre 1 y 10.000 unidades.</small>
               </div>
 
               <div class="campo">
                 <label for="fecha">Disponible desde</label>
                 <input type="date" id="fecha" name="fecha" required min="2026-10-01" max="2027-12-31">
+                <small class="error-texto" id="error-fecha"></small>
               </div>
             </div>
 
@@ -174,9 +184,17 @@
             <input type="checkbox" id="acepto" name="acepto" required>
             <label for="acepto">Confirmo que los datos son reales y que soy el productor o tengo su permiso.</label>
           </div>
+          <small class="error-texto" id="error-acepto"></small>
 
           <button type="submit" class="boton boton-destacado boton-enviar">Enviar producto</button>
+
+          <!-- Mensaje de éxito o error al enviar -->
+          <p id="mensaje-form" class="mensaje-form"></p>
         </form>
+
+        <!-- Productos guardados en localStorage -->
+        <h2 class="lista-titulo">Mis productos publicados</h2>
+        <ul id="mis-productos" class="mis-productos"></ul>
       </section>
 
       <!-- Consejos -->
@@ -237,5 +255,6 @@
     </div>
   </footer>
 
+  <script src="js/publicar.js"></script>
 </body>
 </html>
