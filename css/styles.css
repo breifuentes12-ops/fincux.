@@ -610,3 +610,48 @@ h1, h2, h3 { color: var(--verde-oscuro); }
   .formulario-zona { grid-template-columns: 3fr 2fr; gap: 4rem; }
   .lateral { position: sticky; top: 90px; align-self: start; padding-top: 2.5rem; }
 }
+
+/* ============================================
+   Avance 2: estilos para JavaScript
+   ============================================ */
+
+/* Mensajes de carga y error */
+.estado { margin: 1rem 0; font-weight: 500; }
+.estado.cargando { color: var(--verde); }
+.estado.error { padding: 0.8rem 1rem; border-radius: var(--borde-redondo); background-color: #fef2f2; color: #dc2626; }
+
+/* Buscador */
+.buscador { max-width: 24rem; }
+
+/* Validación en tiempo real */
+.campo input.campo-error,
+.campo select.campo-error,
+.campo textarea.campo-error { border-color: #dc2626; background-color: #fef2f2; }
+
+.campo input.campo-ok,
+.campo select.campo-ok,
+.campo textarea.campo-ok { border-color: #16a34a; }
+
+.error-texto { font-size: 0.8rem; color: #dc2626; }
+
+/* Mensaje al enviar */
+.mensaje-form { margin-top: 1rem; font-weight: 500; }
+.mensaje-form.ok { color: #16a34a; }
+.mensaje-form.error { color: #dc2626; }
+
+/* Lista de productos publicados */
+.lista-titulo { margin: 2rem 0 1rem; font-size: 1.3rem; }
+.mis-productos { display: flex; flex-direction: column; gap: 0.5rem; }
+.item-publicado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--borde-redondo);
+  background-color: var(--blanco);
+  box-shadow: var(--sombra);
+}
+.boton-eliminar { padding: 0.4rem 0.8rem; border-radius: 8px; background-color: #dc2626; color: #fff; }
+.boton-eliminar:hover { background-color: #b91c1c; }
+.lista-vacia { color: var(--texto-suave); }
