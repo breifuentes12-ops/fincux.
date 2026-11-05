@@ -260,18 +260,19 @@ h1, h2, h3 { color: var(--verde-oscuro); }
 
 .paso {
   padding: 2rem;
-  border-radius: var(--borde-grande);
+  border-top: 4px solid var(--verde);
+  border-radius: var(--borde-redondo);
   background-color: var(--blanco);
-  box-shadow: var(--sombra);
 }
 
-.paso-icono {
+.paso-numero {
   display: block;
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
   color: var(--verde);
 }
-
 
 .paso h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
 .paso p { font-size: 0.95rem; line-height: 1.55; color: var(--texto); }
