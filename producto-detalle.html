@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leche | Fincux</title>
-  <meta name="description" content="Leche fresca de vaca de la vereda El Retiro, Sahagún. Precio, disponibilidad y datos del productor.">
+  <title>Detalle del producto | Fincux</title>
+  <meta name="description" content="Ficha de un producto del campo de Sahagún: precio, disponibilidad y datos del productor.">
 
   <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,27 +60,26 @@
     <section class="centro detalle">
       <a href="productos.html" class="volver">Volver al catálogo</a>
 
-      <!-- Ficha -->
-      <article class="detalle-grilla">
+      <p id="estado" class="estado"></p>
+
+      <!-- Ficha: se llena con JavaScript (js/detalle.js) -->
+      <article class="detalle-grilla" id="ficha" hidden>
         <figure class="detalle-foto">
-          <picture>
-            <source srcset="img/leche.webp" type="image/webp">
-            <img src="img/leche.jpg" alt="Leche fresca de vaca en cantinas" width="800" height="500">
-          </picture>
+          <img id="d-foto" src="img/campo.jpg" alt="" width="800" height="500">
         </figure>
 
         <div class="detalle-info">
-          <h1>Leche</h1>
-          <p class="detalle-precio">$1.800 <span>/ litro</span></p>
+          <h1 id="d-nombre"></h1>
+          <p class="detalle-precio" id="d-precio"></p>
 
           <ul class="detalle-lista">
-            <li><i class="fa-solid fa-box" aria-hidden="true"></i> <strong>Disponible:</strong> 500 litros/semana</li>
-            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <strong>Ubicación:</strong> Vereda El Retiro, Sahagún</li>
-            <li><i class="fa-solid fa-user" aria-hidden="true"></i> <strong>Productor:</strong> Don Héctor Pérez</li>
-            <li><i class="fa-regular fa-calendar" aria-hidden="true"></i> <strong>Disponible desde:</strong> <time datetime="2026-10-20">20 de octubre de 2026</time></li>
+            <li><i class="fa-solid fa-box" aria-hidden="true"></i> <strong>Disponible:</strong> <span id="d-cantidad"></span></li>
+            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <strong>Ubicación:</strong> <span id="d-vereda"></span></li>
+            <li><i class="fa-solid fa-user" aria-hidden="true"></i> <strong>Productor:</strong> <span id="d-productor"></span></li>
+            <li><i class="fa-regular fa-calendar" aria-hidden="true"></i> <strong>Disponible desde:</strong> <span id="d-fecha"></span></li>
           </ul>
 
-          <p class="detalle-descripcion">Leche fresca de vaca, ordeñada cada mañana en la vereda El Retiro. Ideal para queseras, panaderías y restaurantes.</p>
+          <p class="detalle-descripcion" id="d-descripcion"></p>
 
           <a href="contacto.html" class="boton boton-destacado boton-consultar">Consultar producto</a>
         </div>
@@ -127,5 +126,6 @@
     </div>
   </footer>
 
+  <script src="js/detalle.js"></script>
 </body>
 </html>
