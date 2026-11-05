@@ -2,8 +2,6 @@
 
 Sitio web que conecta a productores campesinos de **Sahagún, Córdoba** con tiendas, restaurantes y negocios locales, para que compren directo y sin intermediarios.
 
-Proyecto del curso **Desarrollo Web I** — Universidad de Córdoba.
-
 ## Primera entrega: HTML5 + CSS3
 
 | Página | Contenido |
@@ -27,15 +25,16 @@ Proyecto del curso **Desarrollo Web I** — Universidad de Córdoba.
 - **Recursos por CDN:** Google Fonts (Roboto) y Font Awesome.
 - El menú móvil funciona **sin JavaScript**.
 
-## Cómo verlo
+## Avance 2: JavaScript
 
-Abre `index.html` en el navegador, o visita la versión publicada: https://breifuentes12-ops.github.io/fincux./
+| Archivo | Qué hace |
+|---|---|
+| `data/productos.json` | Datos de los productos (simula una API) |
+| `js/productos.js` | Carga el catálogo con `fetch` + `async/await`, muestra "Cargando..." y errores (404 / 500) con `try/catch`, y tiene un buscador en tiempo real |
+| `js/publicar.js` | Valida el formulario mientras se escribe (bordes rojo/verde y mensajes), guarda el producto en `localStorage` sin recargar (`preventDefault`) y permite eliminarlo |
+| `js/detalle.js` | Lee el `?id=` de la URL y muestra los datos de ese producto |
 
-## Próximas entregas
+Los productos publicados se guardan en `localStorage` y siguen ahí al recargar la página.
 
-- **Avance 2:** JavaScript (eventos, `fetch` a un `data.json`, `localStorage` y validación en tiempo real).
-- **Entrega final:** migración a Vue.js con Vue Router y despliegue.
+> Para que `fetch` funcione hay que abrir el sitio con un servidor (Live Server en VS Code o GitHub Pages), no con doble clic.
 
-## Autor
-
-Breiner Fuentes — 2026
