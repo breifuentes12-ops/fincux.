@@ -20,10 +20,8 @@ async function cargarDetalle() {
     }
 
     const datos = await respuesta.json();
-    const publicados = JSON.parse(localStorage.getItem('productosFincux')) || [];
-    const todos = datos.concat(publicados);
 
-    const p = todos.find(function (item) { return item.id === id; });
+    const p = datos.find(function (item) { return item.id === id; });
 
     if (!p) {
       throw new Error('El producto no existe.');

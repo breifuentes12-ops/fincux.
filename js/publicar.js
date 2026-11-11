@@ -1,11 +1,11 @@
 // =============================================
 // publicar.js
-// Valida el formulario en tiempo real, guarda el
-// producto en localStorage y muestra la lista
+// Valida el formulario en tiempo real y guarda la
+// solicitud en localStorage (simulación: queda
+// "pendiente" hasta que el administrador la revise)
 // =============================================
 
 const formulario = document.getElementById('form-publicar');
-const lista = document.getElementById('mis-productos');
 const mensaje = document.getElementById('mensaje-form');
 const campos = formulario.querySelectorAll('input, select, textarea');
 
@@ -47,13 +47,13 @@ campos.forEach(function (campo) {
   campo.addEventListener('change', function () { validarCampo(campo); });
 });
 
-// 3. Leer y guardar en localStorage
-function leerProductos() {
-  return JSON.parse(localStorage.getItem('productosFincux')) || [];
+// 3. Leer y guardar las solicitudes en localStorage
+function leerSolicitudes() {
+  return JSON.parse(localStorage.getItem('solicitudesFincux')) || [];
 }
 
-function guardarProductos(productos) {
-  localStorage.setItem('productosFincux', JSON.stringify(productos));
+function guardarSolicitudes(solicitudes) {
+  localStorage.setItem('solicitudesFincux', JSON.stringify(solicitudes));
 }
 
 // 4. Enviar el formulario sin recargar la página
@@ -72,8 +72,8 @@ formulario.addEventListener('submit', function (event) {
     return;
   }
 
-  const nuevo = {
-    id: 'p' + Date.now(),
+  const solicitud = {
+    id: 's' + Date.now(),
     nombre: document.getElementById('producto').value,
     categoria: document.getElementById('categoria').value,
     precio: document.getElementById('precio').value,
@@ -83,62 +83,23 @@ formulario.addEventListener('submit', function (event) {
     productor: document.getElementById('productor').value,
     vereda: document.getElementById('vereda').value,
     telefono: document.getElementById('telefono').value,
+    correo: document.getElementById('correo').value,
     descripcion: document.getElementById('descripcion').value,
-    imagen: 'campo'
+    estado: 'pendiente'
   };
 
-  const productos = leerProductos();
-  productos.push(nuevo);
-  guardarProductos(productos);
+  // Se agrega a la lista guardada (no aparece en el catálogo
+  // hasta que el administrador la apruebe)
+  const solicitudes = leerSolicitudes();
+  solicitudes.push(solicitud);
+  guardarSolicitudes(solicitudes);
 
-  mensaje.textContent = '¡Producto publicado! Ya aparece en el catálogo.';
+  mensaje.textContent = '¡Solicitud enviada! Revisaremos tu producto y te contactaremos por WhatsApp.';
   mensaje.className = 'mensaje-form ok';
 
+  // Limpiar el formulario y los bordes
   formulario.reset();
   campos.forEach(function (campo) {
     campo.classList.remove('campo-ok', 'campo-error');
   });
-
-  mostrarLista();
 });
-
-// 5. Mostrar la lista de productos publicados
-function mostrarLista() {
-  const productos = leerProductos();
-  lista.innerHTML = '';
-
-  if (productos.length === 0) {
-    lista.innerHTML = '<li class="lista-vacia">Todavía no has publicado productos.</li>';
-    return;
-  }
-
-  productos.forEach(function (p) {
-    const item = document.createElement('li');
-    item.className = 'item-publicado';
-    item.innerHTML = `
-      <span><strong>${p.nombre}</strong> — $${Number(p.precio).toLocaleString('es-CO')} / ${p.unidad}</span>
-    `;
-
-    // Botón para eliminar
-    const boton = document.createElement('button');
-    boton.textContent = 'Eliminar';
-    boton.className = 'boton-eliminar';
-    boton.addEventListener('click', function () {
-      eliminarProducto(p.id);
-    });
-
-    item.appendChild(boton);
-    lista.appendChild(item);
-  });
-}
-
-// 6. Eliminar un producto
-function eliminarProducto(id) {
-  const productos = leerProductos().filter(function (p) {
-    return p.id !== id;
-  });
-  guardarProductos(productos);
-  mostrarLista();
-}
-
-mostrarLista();

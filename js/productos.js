@@ -1,13 +1,11 @@
 // =============================================
 // productos.js
 // Carga el catálogo desde data/productos.json
-// y le suma los productos guardados en localStorage
 // =============================================
 
 const grilla = document.getElementById('grilla-productos');
 const estado = document.getElementById('estado');
 const total = document.getElementById('total-productos');
-const buscador = document.getElementById('buscador');
 
 let productos = [];
 
@@ -30,12 +28,7 @@ async function cargarProductos() {
       throw new Error('Error ' + respuesta.status);
     }
 
-    const datos = await respuesta.json();
-
-    // Productos que el usuario publicó (guardados en el navegador)
-    const publicados = JSON.parse(localStorage.getItem('productosFincux')) || [];
-
-    productos = datos.concat(publicados);
+    productos = await respuesta.json();
 
     estado.textContent = '';
     estado.className = 'estado';
@@ -73,17 +66,5 @@ function mostrarProductos(lista) {
 
   total.textContent = lista.length + ' productos en el catálogo';
 }
-
-// 3. Buscar mientras se escribe (evento input)
-buscador.addEventListener('input', function () {
-  const texto = buscador.value.toLowerCase();
-
-  const filtrados = productos.filter(function (p) {
-    return p.nombre.toLowerCase().includes(texto) ||
-           p.categoria.toLowerCase().includes(texto);
-  });
-
-  mostrarProductos(filtrados);
-});
 
 cargarProductos();
