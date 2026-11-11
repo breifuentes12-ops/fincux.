@@ -65,24 +65,27 @@
     <div class="centro formulario-zona">
       <!-- Formulario -->
       <section aria-label="Formulario de contacto">
-        <form class="formulario" action="#" method="get">
+        <form class="formulario" id="form-contacto" novalidate>
 
           <div class="campo">
             <label for="nombre">Nombre completo</label>
             <input type="text" id="nombre" name="nombre" placeholder="Nombres y apellidos" autocomplete="name"
                    required minlength="3" maxlength="60">
+            <small class="error-texto" id="error-nombre"></small>
           </div>
 
           <div class="fila-campos">
             <div class="campo">
               <label for="correo">Correo electrónico</label>
               <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" autocomplete="email" required>
+              <small class="error-texto" id="error-correo"></small>
             </div>
 
             <div class="campo">
               <label for="telefono">Teléfono / WhatsApp</label>
               <input type="tel" id="telefono" name="telefono" placeholder="3001234567" autocomplete="tel"
                      required pattern="3[0-9]{9}" title="Celular de 10 dígitos que empiece por 3, sin espacios">
+              <small class="error-texto" id="error-telefono"></small>
               <small class="ayuda">10 dígitos, sin espacios. Ej: 3001234567</small>
             </div>
           </div>
@@ -90,14 +93,19 @@
           <div class="campo">
             <label for="asunto">Asunto</label>
             <input type="text" id="asunto" name="asunto" placeholder="¿En qué te podemos ayudar?" required minlength="4" maxlength="80">
+            <small class="error-texto" id="error-asunto"></small>
           </div>
 
           <div class="campo">
             <label for="mensaje">Mensaje</label>
             <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí tu mensaje" required minlength="10" maxlength="500"></textarea>
+            <small class="error-texto" id="error-mensaje"></small>
           </div>
 
           <button type="submit" class="boton boton-verde boton-enviar">Enviar mensaje</button>
+
+          <!-- Mensaje de confirmación o error al enviar -->
+          <p id="mensaje-form" class="mensaje-form"></p>
         </form>
       </section>
 
@@ -166,5 +174,6 @@
     </div>
   </footer>
 
+  <script src="js/contacto.js"></script>
 </body>
 </html>
