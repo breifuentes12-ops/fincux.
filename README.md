@@ -7,13 +7,13 @@ Sitio web que conecta a productores campesinos de **Sahagún, Córdoba** con tie
 | Página | Contenido |
 |---|---|
 | `index.html` | Inicio: presentación, cómo funciona y productos destacados |
-| `informacion.html` | Qué es Fincux, por qué nació y para quién es |
+| `informacion.html` | Qué es Fincux, por qué nació y qué hace |
 | `productos.html` | Catálogo de productos |
 | `producto-detalle.html` | Ficha de un producto (precio, productor, vereda, disponibilidad) |
 | `publicar.html` | Formulario para que el productor publique su producto |
 | `contacto.html` | Formulario de contacto y datos de Fincux |
 
-### Qué se aplicó
+### Qué apliqué
 
 - **HTML semántico:** `header`, `nav`, `main`, `section`, `article`, `aside`, `footer`, `figure`, `fieldset`.
 - **Validación nativa en los formularios:** `required`, `pattern`, `min`, `max`, `minlength`, `maxlength`, `type="email"`, `type="date"`, `type="number"` y `type="tel"`.
@@ -30,11 +30,11 @@ Sitio web que conecta a productores campesinos de **Sahagún, Córdoba** con tie
 | Archivo | Qué hace |
 |---|---|
 | `data/productos.json` | Datos de los productos (simula una API) |
-| `js/productos.js` | Carga el catálogo con `fetch` + `async/await`, muestra "Cargando..." y errores (404 / 500) con `try/catch`, y tiene un buscador en tiempo real |
-| `js/publicar.js` | Valida el formulario mientras se escribe (bordes rojo/verde y mensajes), guarda el producto en `localStorage` sin recargar (`preventDefault`) y permite eliminarlo |
+| `js/productos.js` | Carga el catálogo con `fetch` + `async/await`, y muestra "Cargando..." y errores (404 / 500) con `try/catch` |
+| `js/publicar.js` | Valida el formulario mientras se escribe (bordes rojo/verde y mensajes), y guarda la solicitud en `localStorage` sin recargar (`preventDefault`) |
 | `js/detalle.js` | Lee el `?id=` de la URL y muestra los datos de ese producto |
+| `js/contacto.js` | Valida el formulario de contacto en tiempo real y muestra "¡Mensaje enviado!" sin recargar |
 
-Los productos publicados se guardan en `localStorage` y siguen ahí al recargar la página.
+Las solicitudes de publicación se guardan en `localStorage` (clave `solicitudesFincux`) con estado `pendiente` y siguen ahí al recargar la página. Es una simulación: no aparecen en el catálogo hasta que el administrador las revise.
 
 > Para que `fetch` funcione hay que abrir el sitio con un servidor (Live Server en VS Code o GitHub Pages), no con doble clic.
-
