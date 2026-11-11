@@ -260,7 +260,6 @@ h1, h2, h3 { color: var(--verde-oscuro); }
 
 .paso {
   padding: 2rem;
-  border-top: 4px solid var(--verde);
   border-radius: var(--borde-redondo);
   background-color: var(--blanco);
 }
@@ -505,6 +504,11 @@ h1, h2, h3 { color: var(--verde-oscuro); }
 .dos-columnas h3 { font-size: 1.05rem; color: var(--texto-oscuro); margin-bottom: 0.4rem; }
 .dos-columnas p { line-height: 1.7; color: var(--texto); }
 
+.cuadro-unico { max-width: 48rem; padding: 1.75rem; border-radius: var(--borde-grande); background-color: var(--blanco); box-shadow: var(--sombra); }
+.cuadro-unico p { line-height: 1.7; color: var(--texto); }
+
+.texto-breve { max-width: 48rem; font-size: 1.05rem; line-height: 1.7; color: var(--texto); }
+
 .info-cierre p { max-width: 26rem; margin-bottom: 1.1rem; font-size: 1.4rem; font-weight: 700; line-height: 1.3; }
 
 /* Footer */
@@ -621,9 +625,6 @@ h1, h2, h3 { color: var(--verde-oscuro); }
 .estado.cargando { color: var(--verde); }
 .estado.error { padding: 0.8rem 1rem; border-radius: var(--borde-redondo); background-color: #fef2f2; color: #dc2626; }
 
-/* Buscador */
-.buscador { max-width: 24rem; }
-
 /* Validación en tiempo real */
 .campo input.campo-error,
 .campo select.campo-error,
@@ -639,20 +640,3 @@ h1, h2, h3 { color: var(--verde-oscuro); }
 .mensaje-form { margin-top: 1rem; font-weight: 500; }
 .mensaje-form.ok { color: #16a34a; }
 .mensaje-form.error { color: #dc2626; }
-
-/* Lista de productos publicados */
-.lista-titulo { margin: 2rem 0 1rem; font-size: 1.3rem; }
-.mis-productos { display: flex; flex-direction: column; gap: 0.5rem; }
-.item-publicado {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
-  border-radius: var(--borde-redondo);
-  background-color: var(--blanco);
-  box-shadow: var(--sombra);
-}
-.boton-eliminar { padding: 0.4rem 0.8rem; border-radius: 8px; background-color: #dc2626; color: #fff; }
-.boton-eliminar:hover { background-color: #b91c1c; }
-.lista-vacia { color: var(--texto-suave); }
