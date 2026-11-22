@@ -1,64 +1,55 @@
-// =============================================
-// publicar.js
-// Valida el formulario en tiempo real y guarda la
-// solicitud en localStorage (simulación: queda
-// "pendiente" hasta que el administrador la revise)
-// =============================================
+// Valida el formulario mientras se escribe, guarda la solicitud en localStorage y muestra un aviso
 
 const formulario = document.getElementById('form-publicar');
-const mensaje = document.getElementById('mensaje-form');
+const avisos = document.getElementById('avisos');
 const campos = formulario.querySelectorAll('input, select, textarea');
 
-// Mensajes de error para cada campo
-const errores = {
-  productor: 'Escribe al menos 3 letras.',
-  vereda: 'Elige una vereda.',
-  telefono: 'Debe tener 10 dígitos y empezar por 3.',
-  correo: 'Escribe un correo válido.',
-  producto: 'Escribe al menos 3 letras.',
-  categoria: 'Elige una categoría.',
-  precio: 'El precio va entre 100 y 1.000.000.',
-  unidad: 'Elige la unidad.',
-  cantidad: 'La cantidad va entre 1 y 10.000.',
-  fecha: 'Elige una fecha válida.',
-  acepto: 'Debes aceptar para continuar.'
-};
-
-// 1. Validar un campo y pintar el borde
+// 1. Revisar un campo: borde verde si está bien, rojo si no
 function validarCampo(campo) {
-  const aviso = document.getElementById('error-' + campo.id);
+  const error = document.getElementById('error-' + campo.id);
 
   if (campo.checkValidity()) {
     campo.classList.remove('campo-error');
     campo.classList.add('campo-ok');
-    if (aviso) aviso.textContent = '';
+    if (error) error.textContent = '';
     return true;
   } else {
     campo.classList.remove('campo-ok');
     campo.classList.add('campo-error');
-    if (aviso) aviso.textContent = errores[campo.id];
+    if (error) error.textContent = campo.validationMessage; // mensaje del navegador
     return false;
   }
 }
 
-// 2. Validar mientras el usuario escribe o cambia algo
+// 2. Revisar cada campo mientras el usuario escribe o elige
 campos.forEach(function (campo) {
   campo.addEventListener('input', function () { validarCampo(campo); });
   campo.addEventListener('change', function () { validarCampo(campo); });
 });
 
-// 3. Leer y guardar las solicitudes en localStorage
-function leerSolicitudes() {
-  return JSON.parse(localStorage.getItem('solicitudesFincux')) || [];
+// 3. Crear un aviso con botón ✕ para cerrarlo
+function mostrarAviso(texto, tipo) {
+  avisos.innerHTML = ''; 
+
+  const aviso = document.createElement('p');        // crear
+  aviso.className = 'mensaje-form ' + tipo;
+  aviso.textContent = texto;
+
+  const cerrar = document.createElement('button');
+  cerrar.type = 'button';
+  cerrar.className = 'cerrar-aviso';
+  cerrar.textContent = '✕';
+  cerrar.addEventListener('click', function () {
+    aviso.remove();                                  // eliminar
+  });
+
+  aviso.appendChild(cerrar);
+  avisos.appendChild(aviso);
 }
 
-function guardarSolicitudes(solicitudes) {
-  localStorage.setItem('solicitudesFincux', JSON.stringify(solicitudes));
-}
-
-// 4. Enviar el formulario sin recargar la página
+// 4. Al enviar el formulario
 formulario.addEventListener('submit', function (event) {
-  event.preventDefault();
+  event.preventDefault(); // evita que la página se recargue
 
   // Revisar todos los campos
   let todoBien = true;
@@ -67,35 +58,28 @@ formulario.addEventListener('submit', function (event) {
   });
 
   if (!todoBien) {
-    mensaje.textContent = 'Revisa los campos marcados en rojo.';
-    mensaje.className = 'mensaje-form error';
+    mostrarAviso('Revisa los campos marcados en rojo.', 'error');
     return;
   }
 
+  // Armar la solicitud con lo que escribió el usuario
   const solicitud = {
-    id: 's' + Date.now(),
-    nombre: document.getElementById('producto').value,
+    producto: document.getElementById('producto').value,
     categoria: document.getElementById('categoria').value,
     precio: document.getElementById('precio').value,
     unidad: document.getElementById('unidad').value,
-    cantidad: document.getElementById('cantidad').value,
-    fecha: document.getElementById('fecha').value,
     productor: document.getElementById('productor').value,
     vereda: document.getElementById('vereda').value,
     telefono: document.getElementById('telefono').value,
-    correo: document.getElementById('correo').value,
-    descripcion: document.getElementById('descripcion').value,
     estado: 'pendiente'
   };
 
-  // Se agrega a la lista guardada (no aparece en el catálogo
-  // hasta que el administrador la apruebe)
-  const solicitudes = leerSolicitudes();
+  // localStorage: recuperar la lista, agregar la nueva y volver a guardar
+  const solicitudes = JSON.parse(localStorage.getItem('solicitudesFincux')) || [];
   solicitudes.push(solicitud);
-  guardarSolicitudes(solicitudes);
+  localStorage.setItem('solicitudesFincux', JSON.stringify(solicitudes));
 
-  mensaje.textContent = '¡Solicitud enviada! Revisaremos tu producto y te contactaremos por WhatsApp.';
-  mensaje.className = 'mensaje-form ok';
+  mostrarAviso('¡Solicitud enviada! Revisaremos tu producto y te contactaremos por WhatsApp.', 'ok');
 
   // Limpiar el formulario y los bordes
   formulario.reset();

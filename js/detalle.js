@@ -1,13 +1,9 @@
-// =============================================
-// detalle.js
-// Lee el ?id= de la URL y muestra ese producto
-// =============================================
+// Lee el ?id= de la URL, busca ese producto en data/productos.json y llena la ficha
 
 const ficha = document.getElementById('ficha');
 const estado = document.getElementById('estado');
 
 async function cargarDetalle() {
-  // Ej: producto-detalle.html?id=leche  ->  "leche"
   const id = new URLSearchParams(window.location.search).get('id');
 
   estado.textContent = 'Cargando producto...';
@@ -19,29 +15,29 @@ async function cargarDetalle() {
       throw new Error('Error ' + respuesta.status);
     }
 
-    const datos = await respuesta.json();
+    const productos = await respuesta.json();
 
-    const p = datos.find(function (item) { return item.id === id; });
+    // Buscar en la lista el producto que tiene ese id
+    const p = productos.find(function (item) { return item.id === id; });
 
     if (!p) {
       throw new Error('El producto no existe.');
     }
 
-    // Llenar la ficha con los datos
+    // Poner los datos del producto en la ficha
     document.getElementById('d-foto').src = 'img/' + p.imagen + '.jpg';
     document.getElementById('d-foto').alt = p.nombre;
     document.getElementById('d-nombre').textContent = p.nombre;
-    document.getElementById('d-precio').innerHTML = '$' + Number(p.precio).toLocaleString('es-CO') + ' <span>/ ' + p.unidad + '</span>';
+    document.getElementById('d-precio').textContent = '$' + p.precio.toLocaleString('es-CO') + ' / ' + p.unidad;
     document.getElementById('d-cantidad').textContent = p.cantidad + ' ' + p.unidad;
     document.getElementById('d-vereda').textContent = 'Vereda ' + p.vereda + ', Sahagún';
     document.getElementById('d-productor').textContent = p.productor;
     document.getElementById('d-fecha').textContent = p.fecha;
     document.getElementById('d-descripcion').textContent = p.descripcion;
 
-    document.title = p.nombre + ' | Fincux';
     estado.textContent = '';
     estado.className = 'estado';
-    ficha.hidden = false;
+    ficha.hidden = false; // mostrar la ficha
 
   } catch (error) {
     estado.textContent = 'No se pudo mostrar el producto. ' + error.message;

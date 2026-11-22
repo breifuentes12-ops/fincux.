@@ -1,47 +1,34 @@
-// =============================================
-// contacto.js
-// Valida el formulario de contacto en tiempo real
-// y muestra la confirmación sin recargar la página
-// =============================================
+// Valida el formulario de contacto mientras se escribey muestra la confirmación sin recargar la página
 
 const formulario = document.getElementById('form-contacto');
 const mensaje = document.getElementById('mensaje-form');
 const campos = formulario.querySelectorAll('input, textarea');
 
-// Mensajes de error para cada campo
-const errores = {
-  nombre: 'Escribe al menos 3 letras.',
-  correo: 'Escribe un correo válido.',
-  telefono: 'Debe tener 10 dígitos y empezar por 3.',
-  asunto: 'Escribe al menos 4 letras.',
-  mensaje: 'El mensaje debe tener al menos 10 letras.'
-};
-
-// 1. Validar un campo y pintar el borde
+// 1. Revisar un campo: borde verde si está bien, rojo si no
 function validarCampo(campo) {
-  const aviso = document.getElementById('error-' + campo.id);
+  const error = document.getElementById('error-' + campo.id);
 
   if (campo.checkValidity()) {
     campo.classList.remove('campo-error');
     campo.classList.add('campo-ok');
-    if (aviso) aviso.textContent = '';
+    if (error) error.textContent = '';
     return true;
   } else {
     campo.classList.remove('campo-ok');
     campo.classList.add('campo-error');
-    if (aviso) aviso.textContent = errores[campo.id];
+    if (error) error.textContent = campo.validationMessage; // mensaje del navegador
     return false;
   }
 }
 
-// 2. Validar mientras el usuario escribe
+// 2. Revisar cada campo mientras el usuario escribe
 campos.forEach(function (campo) {
   campo.addEventListener('input', function () { validarCampo(campo); });
 });
 
-// 3. Enviar sin recargar la página
+// 3. Al enviar el formulario
 formulario.addEventListener('submit', function (event) {
-  event.preventDefault();
+  event.preventDefault(); // evita que la página se recargue
 
   let todoBien = true;
   campos.forEach(function (campo) {
@@ -57,7 +44,7 @@ formulario.addEventListener('submit', function (event) {
   mensaje.textContent = '¡Mensaje enviado! Te responderemos pronto.';
   mensaje.className = 'mensaje-form ok';
 
-  // Limpiar los campos y los bordes
+  // Limpiar el formulario y los bordes
   formulario.reset();
   campos.forEach(function (campo) {
     campo.classList.remove('campo-ok', 'campo-error');
