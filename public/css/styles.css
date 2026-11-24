@@ -625,3 +625,13 @@ h1, h2, h3 { color: var(--verde-oscuro); }
 .mensaje-form.ok { color: #16a34a; }
 .mensaje-form.error { color: #dc2626; }
 .cerrar-aviso { margin-left: 0.5rem; border: none; background: none; color: inherit; font-size: 1rem; cursor: pointer; }
+/* Vue: toda la página ahora vive dentro de <div id="app">, así que el grid también va aquí */
+#app {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
