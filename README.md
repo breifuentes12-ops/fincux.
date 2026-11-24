@@ -2,39 +2,83 @@
 
 Sitio web que conecta a productores campesinos de **Sahagún, Córdoba** con tiendas, restaurantes y negocios locales, para que compren directo y sin intermediarios.
 
-## Primera entrega: HTML5 + CSS3
+**Aplicación publicada:** https://breifuentes12-ops.github.io/fincux./
 
-| Página | Contenido |
+## Entrega final: Vue.js (SPA)
+
+La página se pasó a **Vue 3** con **Vite**. Ahora es una SPA: cambia de página sin recargar.
+
+### Estructura de carpetas
+
+```
+fincux/
+├── index.html              ← página única donde Vue monta la app
+├── package.json            ← dependencias y comandos
+├── vite.config.js          ← configuración de Vite
+├── public/                 ← archivos que se copian tal cual
+│   ├── css/styles.css      ← los mismos estilos de las entregas anteriores
+│   ├── data/productos.json ← datos de los productos (simula una API)
+│   └── img/                ← imágenes
+└── src/
+    ├── main.js             ← crea la app y le agrega el router
+    ├── App.vue             ← header + vista actual + footer
+    ├── store.js            ← estado compartido (productos y solicitudes)
+    ├── router/index.js     ← rutas de la aplicación
+    ├── components/         ← piezas reutilizables
+    │   ├── BarraNavegacion.vue
+    │   ├── PiePagina.vue
+    │   ├── TarjetaProducto.vue
+    │   └── AvisoMensaje.vue
+    └── views/              ← una vista por página
+        ├── InicioView.vue
+        ├── InformacionView.vue
+        ├── ProductosView.vue
+        ├── DetalleView.vue
+        ├── PublicarView.vue
+        └── ContactoView.vue
+```
+
+### Rutas (Vue Router)
+
+| Ruta | Vista |
 |---|---|
-| `index.html` | Inicio: presentación, cómo funciona y productos destacados |
-| `informacion.html` | Qué es Fincux, por qué nació y qué hace |
-| `productos.html` | Catálogo de productos |
-| `producto-detalle.html` | Ficha de un producto (precio, productor, vereda, disponibilidad) |
-| `publicar.html` | Formulario para que el productor publique su producto |
-| `contacto.html` | Formulario de contacto y datos de Fincux |
+| `/` | Inicio |
+| `/informacion` | Información |
+| `/productos` | Catálogo |
+| `/producto/:id` | Detalle de un producto |
+| `/publicar` | Formulario para publicar |
+| `/contacto` | Formulario de contacto |
 
 ### Qué apliqué
 
-- **HTML semántico:** `header`, `nav`, `main`, `section`, `article`, `aside`, `footer`, `figure`, `fieldset`.
-- **Validación nativa en los formularios:** `required`, `pattern`, `min`, `max`, `minlength`, `maxlength`, `type="email"`, `type="date"`, `type="number"` y `type="tel"`.
-- **Metadatos:** `charset`, `viewport`, `title` y `description` en cada página.
-- **Multimedia:** `<picture>` con imágenes WebP y respaldo JPG, `loading="lazy"`, `width`/`height` en las imágenes e íconos `<svg>` en el menú.
-- **CSS externo** en `css/styles.css`, sin estilos en línea.
-- **CSS Grid** para la estructura general (header / main / footer) y las grillas; **Flexbox** para la navegación, las tarjetas y los botones.
-- **Mobile first** con 3 breakpoints: 640px, 768px y 1024px.
-- **Recursos por CDN:** Google Fonts (Roboto) y Font Awesome.
-- El menú móvil funciona **sin JavaScript**.
+- **Componentes `.vue`** separados en `views/` y `components/`.
+- **Props:** `TarjetaProducto` recibe el producto; `AvisoMensaje` recibe el texto y el tipo.
+- **Eventos personalizados:** `AvisoMensaje` avisa al padre con `$emit('cerrar')`.
+- **Directivas:** `v-for` (listas de productos), `v-if / v-else` (cargando, error, contenido), `v-model` (formularios y menú), `v-bind` (imágenes, enlaces y clases rojo/verde) y `v-on` (`@submit`, `@input`, `@click`).
+- **Estado compartido** en `store.js` con `reactive()`: Inicio, Productos y Detalle usan la misma lista de productos.
+- Se mantiene lo del Avance 2: `fetch` + `async/await` + `try/catch`, validación en tiempo real y `localStorage` (clave `solicitudesFincux`).
 
-## Avance 2: JavaScript
+## Instalación local
 
-| Archivo | Qué hace |
-|---|---|
-| `data/productos.json` | Datos de los productos (simula una API) |
-| `js/productos.js` | Carga el catálogo con `fetch` + `async/await`, y muestra "Cargando..." y errores (404 / 500) con `try/catch` |
-| `js/publicar.js` | Valida el formulario mientras se escribe (bordes rojo/verde y mensajes), y guarda la solicitud en `localStorage` sin recargar (`preventDefault`) |
-| `js/detalle.js` | Lee el `?id=` de la URL y muestra los datos de ese producto |
-| `js/contacto.js` | Valida el formulario de contacto en tiempo real y muestra "¡Mensaje enviado!" sin recargar |
+```bash
+npm install
+npm run dev
+```
 
-Las solicitudes de publicación se guardan en `localStorage` (clave `solicitudesFincux`) con estado `pendiente` y siguen ahí al recargar la página. Es una simulación: no aparecen en el catálogo hasta que el administrador las revise.
+Abre el link que aparece en la terminal (normalmente http://localhost:5173).
 
-> Para que `fetch` funcione hay que abrir el sitio con un servidor (Live Server en VS Code o GitHub Pages), no con doble clic.
+Para generar la versión de producción:
+
+```bash
+npm run build
+```
+
+Queda en la carpeta `dist/`.
+
+## Despliegue
+
+Publicado en **GitHub Pages** con GitHub Actions (`.github/workflows/deploy.yml`). Cada `git push` a `main` vuelve a construir y publicar la página automáticamente.
+
+- Comando de build: `npm run build`
+- Carpeta que se publica: `dist`
+- En `vite.config.js` se usa `base: './'` para que las rutas funcionen dentro de `/fincux./`
